@@ -19,6 +19,8 @@ class CreateChannelsTable extends Migration
             $table->string("crawler")->index();
             $table->string("logo")->nullable();
             $table->string("type");
+            $table->string("playlist")->nullable()->index();
+            $table->integer("playlistOrder")->nullable()->index();
             $table->longText("url");
             $table->longText("description")->nullable();
             $table->boolean("active");

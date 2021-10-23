@@ -39,7 +39,7 @@ Route::get('category/channels', function() {
     $categories = Category::all();
     $data = [];
     foreach ($categories as $key => $category) {
-        $data[$category->name]=$category->channels()->get();
+        $data[$category->name]=$category->channels()->where('active',true)->get();
     }
 
     return $data;
